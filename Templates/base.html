@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html>
+
+    <head>
+
+        <title>{{title}}</title>
+
+
+    </head>
+
+<body>
+
+    <main>
+
+        <nav>
+            <a href='/blog'>Home Blog Page</a>
+            <a href='/new_post'>Add A Blog Entry</a>
+        </nav>
+
+
+
+        <div class="container">
+
+            {% with messages = get_flashed_messages() %}
+                {% for message in messages %}
+                    <div class="flash_message">{{message|safe}}</div>
+
+                {% endfor %}
+
+            {% endwith %}
+
+
+            {% block content %}
+
+            {% endblock %}
+
+
+
+        </div> 
+
+    </main>
+
+
+
+</body>
+
+</html>
